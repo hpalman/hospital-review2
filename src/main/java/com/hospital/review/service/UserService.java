@@ -3,6 +3,8 @@ package com.hospital.review.service;
 import org.springframework.stereotype.Service;
 
 import com.hospital.review.domain.User;
+import com.hospital.review.exception.AppException;
+import com.hospital.review.exception.ErrorCode;
 import com.hospital.review.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -17,7 +19,7 @@ public class UserService {
 
         // userName 중복 check
         userRepository.findByUserName(userName).ifPresent(user -> {
-            throw new RuntimeException(userName + "는 이미 있습니다.");
+            throw new AppException(ErrorCode.USERNAME_DUPLICATED, userName + "는 이미 있습니다.");
         });
 
         // 저장
