@@ -26,3 +26,6 @@
 9. ErrorCode 선언
 10.중복 check exception수정
 
+
+[Spring] @RequestBody에 기본생성자만 필요하고 Setter는 필요없는 이유 - 1
+https://blogshine.tistory.com/445
