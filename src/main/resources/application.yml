@@ -10,12 +10,11 @@ spring:
     show-sql: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: localhost
-    username: root
-    password: 1q2w3e4r
+    url: jdbc:mysql://localhost:3386/schema2
+    username: schema2
+    password: schema2
+#    url: localhost
+#    username: root
+#    password: mysql
   application:
     name: hospital-review2
-
-jwt:
-  token:
-    secret: hello

@@ -25,7 +25,7 @@ public class UserService {
                 .userName(userName)
                 .password(password)
                 .build();
-        userRepository.save(null);
+        userRepository.save(user);
 
         return "SUCCESS";
     }

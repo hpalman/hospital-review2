@@ -1,11 +1,14 @@
 package com.hospital.review.domain.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Getter
+@NoArgsConstructor
 public class UserJoinRequest {
-    String userName;
-    String password;
+    private String userName;
+    private String password;
 }

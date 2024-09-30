@@ -1,5 +1,7 @@
 package com.hospital.review.controller;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -45,6 +47,10 @@ public class UserControllerTest {
     void join_fail() throws Exception {
         String userName = "kyongrok";
         String password = "1q2w3e4r";
+
+        when(userService.join(any(), any()))
+            .thenThrow(new RuntimeException("해당 userName이 중복됩니다."));
+
         mockMvc.perform(post("/api/v1/users/join")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsBytes(new UserJoinRequest(userName, password))))
