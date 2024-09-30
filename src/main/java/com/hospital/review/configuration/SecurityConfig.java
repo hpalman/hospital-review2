@@ -25,5 +25,6 @@ public class SecurityConfig {
                 .and()
                 //.addFilterBefore(new JwtTokenFilter(userService, secretKey), UsernamePasswordAuthenticationToken, null)
                 .build();
+
     }
 }
